@@ -34,12 +34,13 @@
 
 package org.opentradingsolutions.log4fix.importer;
 
-import org.opentradingsolutions.log4fix.core.LogMessage;
-import quickfix.SessionID;
-import quickfix.field.MsgType;
-
 import java.util.Date;
 import java.util.concurrent.BlockingQueue;
+
+import org.opentradingsolutions.log4fix.core.LogMessage;
+
+import quickfix.SessionID;
+import quickfix.field.MsgType;
 
 /**
  * @author Brian M. Coyner
@@ -79,18 +80,19 @@ public class LogMessageBuilder implements Runnable {
                 }
 
                 int beginIndex = 2; // 8= takes up 0 and 1... value starts at 2.
+                int messageBeginIndex = 2;
                 int endIndex = rawMessage.indexOf(LogMessage.SOH_DELIMETER, beginIndex);
                 String beginString = rawMessage.substring(2, endIndex);
 
-                beginIndex = rawMessage.indexOf("35=", endIndex) + 3;
+                beginIndex = rawMessage.indexOf("35=", messageBeginIndex) + 3;
                 endIndex = rawMessage.indexOf(LogMessage.SOH_DELIMETER, beginIndex);
                 String messageType = rawMessage.substring(beginIndex, endIndex);
 
-                beginIndex = rawMessage.indexOf("49=", endIndex) + 3;
+                beginIndex = rawMessage.indexOf("49=", messageBeginIndex) + 3;
                 endIndex = rawMessage.indexOf(LogMessage.SOH_DELIMETER, beginIndex);
                 String senderCompId = rawMessage.substring(beginIndex, endIndex);
 
-                beginIndex = rawMessage.indexOf("56=", endIndex) + 3;
+                beginIndex = rawMessage.indexOf("56=", messageBeginIndex) + 3;
                 endIndex = rawMessage.indexOf(LogMessage.SOH_DELIMETER, beginIndex);
                 String targetCompId = rawMessage.substring(beginIndex, endIndex);
 

@@ -34,14 +34,14 @@
 
 package org.opentradingsolutions.log4fix.core;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import quickfix.DataDictionary;
 import quickfix.Field;
 import quickfix.FieldType;
 import quickfix.field.MsgType;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 /**
  * Represents a single QuickFIX field. This object provides extra information about the
@@ -80,7 +80,7 @@ public class LogField {
         final String messageTypeString = messageType.getValue();
         final int fieldTag = field.getTag();
 
-        fieldType = dictionary.getFieldTypeEnum(fieldTag);
+        fieldType = dictionary.getFieldType(fieldTag);
         fieldName = dictionary.getFieldName(fieldTag);
         fieldValueName = dictionary.getValueName(fieldTag, field.getObject().toString());
         required = getDataDictionary().isRequiredField(messageTypeString, fieldTag);

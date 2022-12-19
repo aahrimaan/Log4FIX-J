@@ -34,14 +34,14 @@
 
 package org.opentradingsolutions.log4fix.core;
 
+import java.io.InputStream;
+
 import junit.framework.TestCase;
 import quickfix.ConfigError;
 import quickfix.DataDictionary;
 import quickfix.Field;
 import quickfix.field.MsgType;
 import quickfix.field.Symbol;
-
-import java.io.InputStream;
 
 /**
  * @author Brian M. Coyner
@@ -62,7 +62,7 @@ public class LogFieldTest extends TestCase {
         assertSame(dd, logField.getDataDictionary());
         assertSame(field, logField.getField());
         assertEquals(dd.getFieldName(field.getTag()), logField.getFieldName());
-        assertEquals(dd.getFieldTypeEnum(field.getTag()), logField.getFieldType());
+        assertEquals(dd.getFieldType(field.getTag()), logField.getFieldType());
         assertEquals(dd.getValueName(field.getTag(), field.getObject().toString()), logField.getFieldValueName());
         assertEquals(field.getObject(), logField.getValue());
         assertTrue(logField.isBodyField());
