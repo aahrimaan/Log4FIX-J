@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BuildServerSettings">
     <option name="USER_ID" value="-1" />
     <option name="USER_NAME" />
@@ -40,13 +43,7 @@
     <option name="USER" value="" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12c71bae-f7f9-4899-b394-34e27f43a267" name="Default" comment="Fixed a bug causing the UI to crash if the sending time is null. We now just ignore null sending times and move on.">
-      <change beforePath="$PROJECT_DIR$/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quickfixj-all-1.5.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/LogField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/LogField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/importer/LogMessageBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/importer/LogMessageBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/opentradingsolutions/log4fix/core/LogFieldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/opentradingsolutions/log4fix/core/LogFieldTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="12c71bae-f7f9-4899-b394-34e27f43a267" name="Default" comment="Fixed a bug causing the UI to crash if the sending time is null. We now just ignore null sending times and move on." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -717,7 +714,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <MESSAGE value="Fixed a few bugs." />
     <MESSAGE value="Updated the copyright on all source files." />
     <MESSAGE value="Added the capability to reverse the message order and remove heartbeat messages." />
