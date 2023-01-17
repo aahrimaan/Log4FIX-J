@@ -423,7 +423,7 @@
         <root url="jar://$PROJECT_DIR$/lib/glazedlists-1.6.0.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/swingx.jar!/" />
         <root url="jar://$PROJECT_DIR$/lib/junit-4.7.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/quickfixj-all-1.5.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/quickfixj-all-1.6.4.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
