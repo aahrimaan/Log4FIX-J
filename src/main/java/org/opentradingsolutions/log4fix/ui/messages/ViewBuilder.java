@@ -134,7 +134,7 @@ public class ViewBuilder {
 
         EventList matchers = new BasicEventList();
 
-        TextComponentMatcherEditor<LogMessage> liveSearchMatcherEditor = new TextComponentMatcherEditor<LogMessage>(filterField, new MessageFilterator());
+        TextComponentMatcherEditor<LogMessage> liveSearchMatcherEditor = new TextComponentMatcherEditor<>(filterField, new MessageFilterator());
         matchers.add(liveSearchMatcherEditor);
         MatcherEditor matcherEditor = new CompositeMatcherEditor(matchers);
         messages.setMatcherEditor(matcherEditor);
@@ -154,11 +154,12 @@ public class ViewBuilder {
         filterPanel.add(new JLabel("Search:"));
         filterPanel.add(filterField);
 
-        JPanel northPanel = new JPanel(new BorderLayout());
-        northPanel.add(sortPanel, BorderLayout.WEST);
-        northPanel.add(filterPanel, BorderLayout.EAST);
-        mainView.add(northPanel, BorderLayout.NORTH);
-
+        if (memoryLogModel.isShowFilterPanel()) {
+            JPanel northPanel = new JPanel(new BorderLayout());
+            northPanel.add(sortPanel, BorderLayout.WEST);
+            northPanel.add(filterPanel, BorderLayout.EAST);
+            mainView.add(northPanel, BorderLayout.NORTH);
+        }
         return mainView;
     }
 
@@ -205,7 +206,7 @@ public class ViewBuilder {
 
 
         HighlighterPipeline pipeline = new HighlighterPipeline();
-        pipeline.addHighlighter(new FieldHighlighter());
+        pipeline.addHighlighter(viewModel.getMemoryLogModel().getFieldHighlighter());
         table.setHighlighters(pipeline);
 
         table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);

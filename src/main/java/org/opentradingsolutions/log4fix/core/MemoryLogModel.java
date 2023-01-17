@@ -38,6 +38,7 @@ import quickfix.SessionID;
 
 import java.beans.PropertyChangeListener;
 import java.util.List;
+import org.opentradingsolutions.log4fix.ui.fields.FieldHighlighter;
 
 /**
  * Implementations must provide thread-safe "add" operations if more than one
@@ -89,5 +90,12 @@ public interface MemoryLogModel {
     void clear();
 
     void addPropertyChangeListener(PropertyChangeListener propertyChangeListener);
-
+    
+    default FieldHighlighter getFieldHighlighter() {
+        return FieldHighlighter.getDefaultInstance();
+    }
+    
+    default boolean isShowFilterPanel() {
+        return true;
+    }
 }

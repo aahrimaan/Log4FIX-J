@@ -50,9 +50,23 @@ import java.awt.*;
  */
 public class FieldHighlighter extends Highlighter {
 
-    private Color dataFieldColor = new Color(198, 158, 236);
-    private Color headerFieldColor = new Color(252, 152, 108);
-    private Color trailerFieldColor = new Color(88, 211, 113);
+    private Color dataFieldColor;
+    private Color headerFieldColor;
+    private Color trailerFieldColor;
+
+    private static FieldHighlighter defaultInstance = new FieldHighlighter(new Color(198, 158, 236),
+                                                                           new Color(252, 152, 108),
+                                                                           new Color(88, 211, 113));
+
+    public FieldHighlighter(Color dataFieldColor, Color headerFieldColor, Color trailerFieldColor) {
+        this.dataFieldColor = dataFieldColor;
+        this.headerFieldColor = headerFieldColor;
+        this.trailerFieldColor = trailerFieldColor;
+    }
+
+    public static FieldHighlighter getDefaultInstance() {
+        return defaultInstance;
+    }
 
     protected Color computeBackground(Component renderer, ComponentAdapter adapter) {
         JXTreeTable table = (JXTreeTable) adapter.getComponent();

@@ -34,6 +34,7 @@
 
 package org.opentradingsolutions.log4fix.core;
 
+import org.opentradingsolutions.log4fix.ui.fields.FieldHighlighter;
 import junit.framework.TestCase;
 import quickfix.SessionID;
 
@@ -59,5 +60,17 @@ public class GlazedListsMemoryLogModelTest extends TestCase {
 
     public void testGetSessionId() {
         assertSame(sessionId, model.getSessionId());
+    }
+
+    public void testHighlighter() {
+        GlazedListsMemoryLogModel model = new GlazedListsMemoryLogModel(sessionId);
+        assertSame(model.getFieldHighlighter(), FieldHighlighter.getDefaultInstance());
+    }
+
+    public void testShowFilterPanel() {
+        GlazedListsMemoryLogModel model = new GlazedListsMemoryLogModel(sessionId);
+        assertTrue(model.isShowFilterPanel());
+        model.setShowFilterPanel(false);
+        assertFalse(model.isShowFilterPanel());
     }
 }

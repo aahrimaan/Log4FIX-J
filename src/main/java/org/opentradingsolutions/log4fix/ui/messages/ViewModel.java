@@ -118,6 +118,10 @@ public class ViewModel implements ListSelectionListener {
         return treeTableModel;
     }
 
+    public MemoryLogModel getMemoryLogModel() {
+        return memoryLogModel;
+    }
+    
     public void valueChanged(ListSelectionEvent e) {
 
         if (e.getValueIsAdjusting()) {

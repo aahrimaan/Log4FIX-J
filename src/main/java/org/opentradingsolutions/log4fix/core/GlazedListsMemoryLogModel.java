@@ -39,6 +39,7 @@ import ca.odell.glazedlists.EventList;
 import ca.odell.glazedlists.FilterList;
 import ca.odell.glazedlists.impl.ThreadSafeList;
 import org.opentradingsolutions.log4fix.ui.importer.ThreadPerTaskExecutor;
+import org.opentradingsolutions.log4fix.ui.fields.FieldHighlighter;
 import quickfix.SessionID;
 
 import java.beans.PropertyChangeListener;
@@ -54,23 +55,28 @@ import java.util.concurrent.Executor;
  */
 public class GlazedListsMemoryLogModel implements MemoryLogModel {
 
-
     private final FilterList<LogMessage> messages;
     private final EventList<LogEvent> events;
     private final PropertyChangeSupport support;
     private final ThreadSafeList<LogMessage> underlying;
     private SessionID sessionId;
+    private FieldHighlighter fieldHighlighter;
+    private boolean showFilterPanel = true;
 
     public GlazedListsMemoryLogModel() {
         this(null);
     }
-
     public GlazedListsMemoryLogModel(SessionID sessionId) {
-        underlying = new ThreadSafeList<LogMessage>(new BasicEventList<LogMessage>());
-        messages = new FilterList<LogMessage>(underlying);
-        events = new ThreadSafeList<LogEvent>(new BasicEventList<LogEvent>());
+        this(sessionId, FieldHighlighter.getDefaultInstance());
+    }
+
+    public GlazedListsMemoryLogModel(SessionID sessionId, FieldHighlighter fieldHighlighter) {
         this.sessionId = sessionId;
-        support = new PropertyChangeSupport(this);
+        this.fieldHighlighter   = fieldHighlighter;
+        underlying  = new ThreadSafeList<>(new BasicEventList<>());
+        messages    = new FilterList<>(underlying);
+        events      = new ThreadSafeList<>(new BasicEventList<>());
+        support     = new PropertyChangeSupport(this);
     }
 
     public void clear() {
@@ -115,5 +121,17 @@ public class GlazedListsMemoryLogModel implements MemoryLogModel {
 
     public void addLogEvent(LogEvent logEvent) {
         events.add(logEvent);
+    }
+
+    public FieldHighlighter getFieldHighlighter() {
+        return fieldHighlighter;
+    }
+
+    public boolean isShowFilterPanel() {
+        return showFilterPanel;
+    }
+
+    public void setShowFilterPanel(boolean showFilterPanel) {
+        this.showFilterPanel = showFilterPanel;
     }
 }

@@ -43,7 +43,15 @@
     <option name="USER" value="" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12c71bae-f7f9-4899-b394-34e27f43a267" name="Default" comment="Fixed a bug causing the UI to crash if the sending time is null. We now just ignore null sending times and move on." />
+    <list default="true" id="12c71bae-f7f9-4899-b394-34e27f43a267" name="Default" comment="expose highlighter and filter panel config in model">
+      <change beforePath="$PROJECT_DIR$/Log4FIX.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Log4FIX.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/GlazedListsMemoryLogModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/GlazedListsMemoryLogModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/MemoryLogModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/core/MemoryLogModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/fields/FieldHighlighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/fields/FieldHighlighter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/messages/ViewBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/messages/ViewBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/messages/ViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/opentradingsolutions/log4fix/ui/messages/ViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/opentradingsolutions/log4fix/core/GlazedListsMemoryLogModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/opentradingsolutions/log4fix/core/GlazedListsMemoryLogModelTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,6 +166,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="71bd2064-43b8-4679-adce-61e96d98086a" />
+        <option name="url" value="https://github.com/aahrimaan/Log4FIX-J.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -294,43 +315,25 @@
       <pane id="Favorites" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="181" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="227" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="192" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="201" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="992" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="995" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="197" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="223" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
-    <property name="RunManagerConfig.compileBeforeRunning" value="true" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="editor.preferences.appearance" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/opt/workspace/Log4FIX-J/lib/quickfixj-all-1.6.4.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.17",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.opentradingsolutions.log4fix.ui.messages" />
@@ -560,6 +563,11 @@
       <item itemvalue="JUnit.LogMessageParserTest" />
       <item itemvalue="JUnit.LogEventTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LogEventTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SQLPlugin.ProjectConfiguration">
     <queries />
@@ -625,7 +633,31 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507390583731</updated>
+      <workItem from="1673289547728" duration="192000" />
+      <workItem from="1673289751536" duration="19720000" />
     </task>
+    <task id="LOCAL-00001" summary="workspace update">
+      <created>1673276926912</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673276926912</updated>
+    </task>
+    <task id="LOCAL-00002" summary="update quickfix jar">
+      <created>1673976370789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673976370789</updated>
+    </task>
+    <task id="LOCAL-00003" summary="workspace update">
+      <created>1673976406747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673976406747</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -695,6 +727,9 @@
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="VCS.FileViewConfiguration">
     <option name="SELECTED_STATUSES" value="DEFAULT" />
     <option name="SELECTED_COLUMNS" value="DEFAULT" />
@@ -702,9 +737,25 @@
     <option name="CUSTOMIZE_VIEW" value="true" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="true" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="23d2599f-6392-423a-a1fb-67e7894a0805">
+          <value>
+            <State />
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -720,7 +771,10 @@
     <MESSAGE value="The log message builder thread's code was corrected to properly stop the thread when encountering an error condition. Log4FIX now cleaning shuts down the thread and prints an error message to the main console explaining the reason why the thread stopped prematurely." />
     <MESSAGE value="Users may now pass a single command line argument pointing to a log file. That file is automatically imported." />
     <MESSAGE value="Fixed a bug causing the UI to crash if the sending time is null. We now just ignore null sending times and move on." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug causing the UI to crash if the sending time is null. We now just ignore null sending times and move on." />
+    <MESSAGE value="update quickfix jar" />
+    <MESSAGE value="workspace update" />
+    <MESSAGE value="expose highlighter and filter panel config in model" />
+    <option name="LAST_COMMIT_MESSAGE" value="expose highlighter and filter panel config in model" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="VssConfiguration">
