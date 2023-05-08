@@ -40,6 +40,7 @@
     <property name="artifact.name" value="${ant.project.name}-${project.version}"/>
     <property name="file.jar" value="${artifact.name}.jar"/>
     <property name="file.src.zip" value="${artifact.name}-src.zip"/>
+    <property name="file.src.jar" value="${artifact.name}-sources.jar"/>
     <property name="file.src.tar.gz" value="${artifact.name}-src.tar.gz"/>
     <property name="file.bin.zip" value="${artifact.name}-bin.zip"/>
     <property name="file.bin.tar.gz" value="${artifact.name}-bin.tar.gz"/>
@@ -166,10 +167,14 @@
         <copy todir="${dir.build.stage.src}">
             <fileset dir=".">
                 <include name="src/**"/>
+                <!--
                 <include name="lib/*.jar"/>
+                -->
                 <include name="lib/*license"/>
                 <include name="LICENSE"/>
+                <!--
                 <include name="build.xml"/>
+                -->
             </fileset>
         </copy>
     </target>
@@ -185,7 +190,7 @@
             </fileset>
             <fileset dir=".">
                 <include name="${dir.lib}/glazedlists-1.6.0.jar"/>
-                <include name="${dir.lib}/quickfixj-all-1.5.1.jar"/>
+                <include name="${dir.lib}/quickfixj-all-1.6.4.jar"/>
                 <include name="${dir.lib}/swingx.jar"/>
                 <include name="lib/*license"/>
                 <include name="LICENSE"/>
@@ -196,6 +201,10 @@
     <target name="source" depends="prepare.distribution">
 
         <mkdir dir="${dir.build.dist}"/>
+
+        <jar
+            basedir="${dir.src.main.java}"
+            destfile="${dir.build.dist}/${file.src.jar}"/>
 
         <zip destfile="${dir.build.dist}/${file.src.zip}">
             <zipfileset dir="${dir.build.stage.src}" prefix="${artifact.name}"/>
